@@ -40,4 +40,8 @@ class Car extends Model
     public function loanings() {
         return $this->hasMany(Loaning::class);
     }
+
+    public function carts() {
+        return $this->hasMany(Cart::class);
+    }
 }
