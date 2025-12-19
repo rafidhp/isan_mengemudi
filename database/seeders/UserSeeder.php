@@ -14,9 +14,12 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->count(35)->create(); // customer
+        User::factory()->count(30)->create(); // customer
         User::factory()->count(5)->create([
             'role_id' => Role::where('name', 'admin')->first()->id,
         ]); // admin
+        User::factory()->count(5)->create([
+            'role_id' => Role::where('name', 'vendor')->first()->id,
+        ]); // vendor
     }
 }

@@ -5,6 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Models\User;
+use App\Models\Role;
 use Laravolt\Indonesia\Models\Province;
 use Laravolt\Indonesia\Models\City;
 use Laravolt\Indonesia\Models\District;
@@ -38,8 +39,13 @@ class CarRentalFactory extends Factory
         $openTimes = ['07:00', '08:00', '09:00', '10:00'];
         $closeTimes = ['19:00', '20:00', '21:00', '22:00'];
 
+        $vendorRole = Role::where('name', 'vendor')->first();
+        $vendorUser = User::where('role_id', $vendorRole->id)
+                        ->inRandomOrder()
+                        ->first();
+
         return [
-            'user_id' => User::inRandomOrder()->first()->id,
+            'user_id' => $vendorUser->id,
             'province_id' => $province->id,
             'city_id' => $city->id,
             'district_id' => $district->id,
