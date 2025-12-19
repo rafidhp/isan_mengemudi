@@ -12,4 +12,16 @@ class SeriesYear extends Model
         'year_id',
         'stock',
     ];
+
+    public function colorSeries() {
+        return $this->belongsTo(ColorSeries::class);
+    }
+
+    public function year() {
+        return $this->belongsTo(Year::class);
+    }
+
+    public function cars() {
+        return $this->hasMany(Car::class);
+    }
 }

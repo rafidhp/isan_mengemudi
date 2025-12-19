@@ -13,4 +13,8 @@ class CarType extends Model
         'description',
         'type_image',
     ];
+
+    public function cars() {
+        return $this->hasMany(Car::class);
+    }
 }

@@ -13,4 +13,16 @@ class Cart extends Model
         'quantity',
         'total_price',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function car() {
+        return $this->belongsTo(Car::class);
+    }
+
+    public function cart() {
+        return $this->hasOne(Cart::class);
+    }
 }

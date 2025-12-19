@@ -12,4 +12,14 @@ class Year extends Model
         'description',
         'additional_price',
     ];
+
+    public function colorSeries() {
+        return $this->belongsToMany(ColorSeries::class, 'series_year')
+                    ->withPivot('id', 'stock')
+                    ->withTimestamps();
+    }
+
+    public function seriesYear() {
+        return $this->hasMany(SeriesYear::class);
+    }
 }

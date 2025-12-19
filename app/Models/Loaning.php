@@ -18,4 +18,16 @@ class Loaning extends Model
         'status',
         'car_condition',
     ];
+
+    public function car() {
+        return $this->belongsTo(Car::class, 'car_id');
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function returning() {
+        return $this->hasOne(Returning::class);
+    }
 }

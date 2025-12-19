@@ -49,4 +49,24 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function role() {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function carRental() {
+        return $this->hasMany(CarRental::class);
+    }
+
+    public function loanings() {
+        return $this->hasMany(Loaning::class);
+    }
+
+    public function reviews() {
+        return $this->hasMany(Review::class);
+    }
+
+    public function carts() {
+        return $this->hasMany(Cart::class);
+    }
 }

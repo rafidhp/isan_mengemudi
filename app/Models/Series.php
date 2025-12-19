@@ -12,4 +12,14 @@ class Series extends Model
         'description',
         'additional_price',
     ];
+
+    public function colors() {
+        return $this->belongsToMany(Color::class, 'color_series')
+                    ->withPivot('id', 'stock')
+                    ->withTimestamps();
+    }
+
+    public function colorSeries() {
+        return $this->hasMany(ColorSeries::class);
+    }
 }

@@ -14,4 +14,12 @@ class Returning extends Model
         'proof_of_return',
         'car_condition',
     ];
+
+    public function loaning() {
+        return $this->belongsTo(Loaning::class, 'loaning_id');
+    }
+
+    public function charges() {
+        return $this->hasMany(Charge::class);
+    }
 }

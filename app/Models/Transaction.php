@@ -15,4 +15,12 @@ class Transaction extends Model
         'payment_method',
         'status',
     ];
+
+    public function carRental() {
+        return $this->belongsTo(CarRental::class, 'car_rental_id');
+    }
+
+    public function cart() {
+        return $this->belongsTo(Cart::class);
+    }
 }

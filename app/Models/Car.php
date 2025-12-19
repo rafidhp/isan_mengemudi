@@ -24,4 +24,20 @@ class Car extends Model
         'longitude',
         'is_active',
     ];
+
+    public function carRental() {
+        return $this->belongsTo(CarRental::class);
+    }
+
+    public function carType() {
+        return $this->belongsTo(CarType::class);
+    }
+
+    public function seriesYear() {
+        return $this->belongsTo(SeriesYear::class);
+    }
+
+    public function loanings() {
+        return $this->hasMany(Loaning::class);
+    }
 }

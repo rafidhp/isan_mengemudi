@@ -14,4 +14,8 @@ class Charge extends Model
         'image',
         'additional_price',
     ];
+
+    public function returning() {
+        return $this->belongsTo(Returning::class);
+    }
 }
