@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 use App\Models\SeriesYear;
 use App\Models\CarType;
@@ -37,6 +38,8 @@ class CarSeeder extends Seeder
                 'car_image' => null,
                 'car_condition' => $conditions[array_rand($conditions)],
                 'price_per_days' => rand(300000, 1500000),
+                'latitude' => fake()->latitude(-11, 6),
+                'longitude' => fake()->longitude(95, 141),
                 'is_active' => true,
             ]);
         }

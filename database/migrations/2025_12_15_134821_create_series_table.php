@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('series_name');
             $table->text('description')->nullable();
-            $table->decimal('additional_price')->default(0);
+            $table->decimal('additional_price', 10, 2)->default(0);
             $table->timestamps();
         });
     }

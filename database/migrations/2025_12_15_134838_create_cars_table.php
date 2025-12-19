@@ -25,7 +25,7 @@ return new class extends Migration
                 'BAIK',
                 'KURANG BAIK',
             ]);
-            $table->decimal('price_per_days');
+            $table->decimal('price_per_days', 10, 2);
             $table->text('latitude');
             $table->text('longitude');
             $table->boolean('is_active')->default(true);

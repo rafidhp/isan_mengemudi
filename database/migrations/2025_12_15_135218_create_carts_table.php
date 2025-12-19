@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('car_id')->constrained('cars')->restrictOnDelete();
             $table->integer('quantity');
-            $table->decimal('total_price');
+            $table->decimal('total_price', 10, 2);
             $table->timestamps();
         });
     }

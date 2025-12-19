@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('charge_name');
             $table->text('description')->nullable();
             $table->text('image')->nullable();
-            $table->decimal('additional_price')->default(0);
+            $table->decimal('additional_price', 10, 2)->default(0);
             $table->timestamps();
         });
     }
